@@ -105,7 +105,7 @@ log = logging.getLogger("tests")
 
 
 @pytest.mark.unit
-class TestParseRowUnit(unittest.TestCase):
+class TestParseRow(unittest.TestCase):
     def setUp(self):
         self.app = ParseRow(row_data)
 
@@ -149,7 +149,7 @@ class TestParseRowUnit(unittest.TestCase):
 
 
 @pytest.mark.unit
-class TestParseRowsUnit(unittest.TestCase):
+class TestParseRows(unittest.TestCase):
     def setUp(self):
         self.app = ParseRows([row_data])
 
