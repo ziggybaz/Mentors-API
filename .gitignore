@@ -1,0 +1,13 @@
+python
+*.pyc
+*__pycache__
+.pytest_cache
+venv
+
+#
+.vscode
+**/*.DS_Store
+
+#
+
+.coverage

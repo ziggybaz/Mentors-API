@@ -1,0 +1,19 @@
+{
+    "_id":1,
+    "cme_completion_date": "2023-05-03",
+    "cme_topic": "Hypertension in pregnancy",
+    "cme_unique_id": 172241557213456,
+    "county": "Kisii",
+    "date_submitted": "2023-05-24T18:45:43",
+    "drill_topic": "",
+    "drill_unique_id": "",
+    "essential_cme_topic": false,
+    "essential_drill_topic": false,
+    "facility_code": "13594",
+    "facility_name": "Gucha Sub County Referral Hospital",
+    "id_number_cme": "71807515563",
+    "id_number_drill": "",
+    "mentor_name": "Dr Dre Kimonge and Ann Arati",
+    "submission_id": 430900057,
+    "success_story": null
+}
