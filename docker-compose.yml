@@ -1,0 +1,49 @@
+version: "3.7"
+
+networks:
+  mentors-net:
+    driver: bridge
+
+services:
+  mentors-db:
+    container_name: mentors-db
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    networks:
+      - mentors-net
+    ports:
+      - "5439:5432"
+    env_file:
+      - .env
+
+  web:
+    build: ./
+    image: mentors-backend
+    container_name: mentors-backend
+
+    volumes:
+      - ./:/usr/src/app/
+    links:
+      - mentors-db
+    depends_on:
+      - mentors-db
+    ports:
+      - 8003:5000
+    env_file:
+      - .env
+    networks:
+      - mentors-net
+
+  adminer:
+    image: adminer
+    container_name: mentors-db-admin
+
+    ports:
+      - 8078:8080
+    depends_on:
+      - mentors-db
+    networks:
+      - mentors-net
