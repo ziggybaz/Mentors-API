@@ -25,7 +25,7 @@ fi
 
 echo "Database is up ..."
 
-export FLASK_APP=manage.py && python manage.py run -h 0.0.0.0
+export FLASK_APP=manage.py &&  python manage.py create_db && python manage.py run -h 0.0.0.0
 
 
 
