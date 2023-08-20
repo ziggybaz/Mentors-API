@@ -20,7 +20,8 @@ services:
       - .env
 
   web:
-    build: ./
+    build:
+      dockerfile: Dockerfile.dev
     image: mentors-backend
     container_name: mentors-backend
 

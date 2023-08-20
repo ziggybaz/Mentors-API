@@ -7,7 +7,7 @@ from dataclasses import dataclass
 
 @dataclass
 class MentorCheck(db.Model, TimestampMixin):
-    id: int
+    _id: int
     cme_completion_date: str
     cme_unique_id: str
     county: str
@@ -27,14 +27,16 @@ class MentorCheck(db.Model, TimestampMixin):
 
     @property
     def drill_topic(self):
+        # link  related drill  data
         return self.drill.topic
 
     @property
     def cme_topic(self):
+        # link  related cme data
         return self.cme.topic
 
     __tablename__ = "mentor_checklist"
-    id = db.Column(db.Integer, primary_key=True)
+    _id = db.Column(db.Integer, primary_key=True)
 
     public_id = db.Column(
         db.String(150),

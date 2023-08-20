@@ -6,4 +6,8 @@ unit_tests:
 
 unit_tests_log:
 	python -m pytest --log-cli-level=INFO -v -m unit
+test_coverage:
+
+	python -m pytest -v --cov=.
+
 

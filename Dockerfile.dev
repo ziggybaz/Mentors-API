@@ -15,8 +15,7 @@ RUN pip install --no-cache-dir -U -r requirements.txt
 # copy project
 COPY . .
 
+
 RUN crontab -l | { cat; echo "* * * * * root python manage.py read ''./data-source/sample-2.csv'> /dev/stdout"; } | crontab -
 
-
-ENTRYPOINT ["sh", "./init-prod.sh" ]
-
+ENTRYPOINT ["sh", "./init.sh" ]

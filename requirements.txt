@@ -4,5 +4,4 @@ psycopg2-binary
 flask-sqlalchemy
 python-dotenv
 pytest-cov
-requests
 gunicorn

@@ -1,1 +1,1 @@
-from .config import AppConfig, AppDevConfig
+from .config import AppConfig, AppDevConfig, AppHerokuConfig

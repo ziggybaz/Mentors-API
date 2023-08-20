@@ -3,7 +3,7 @@ import logging
 import unittest
 from pprint import pformat
 
-from parser.parser import ParseRow, ParseRows
+from jparser import ParseRow, ParseRows
 
 row_data = {
     "__version__": "vTJqT982rXnKw8jxwRsiuX",

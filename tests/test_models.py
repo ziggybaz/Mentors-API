@@ -1,7 +1,7 @@
 import unittest
 import pytest
 
-from models.mentor import MentorCheck
+from models import MentorCheck
 
 
 @pytest.mark.unit

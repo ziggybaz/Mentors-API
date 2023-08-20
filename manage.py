@@ -2,11 +2,10 @@ import click
 import logging
 import csv
 from flask.cli import FlaskGroup
-from parser.parser import ParseRows, ParseRow
+from jparser.parser import ParseRows, ParseRow
 from sqlalchemy import text
 from apps import init_app
-from models import db
-from models.mentor import MentorCheck
+from models import db, MentorCheck
 
 
 app = create_app = init_app(db=db)
