@@ -1,0 +1,89 @@
+swagger: "2.0"
+info:
+  title: Mentors API
+  description: API to manage mentorships
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:8003/
+    description: Local machine
+  - url:  https://jparser-api-7097118d0ae3.herokuapp.com/
+    description: Heroku
+basePath: /api/v1
+paths:
+  /ping:
+    get:
+      tags:
+      - ping
+      summary: Check API health status
+      description: Check API health status
+      responses:
+        200:
+          description: Health status returned
+
+
+  /mentorships:
+    get:
+      tags:
+      summary: Fetch list of mentorships
+      description: Fetch list of mentorships
+
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                    - $ref: '#/definitions/Mentorship'
+
+
+
+
+definitions:
+
+  Mentorship:
+    type: object
+    properties:
+      cme_completion_date:
+        type: string
+      cme_topic:
+        type: string
+      cme_unique_id:
+        type: integer
+      county:
+        type: string
+      date_submitted:
+        type: string
+      drill_topic:
+        type: string
+      drill_unique_id:
+        type: integer
+      essential_cme_topic:
+        type: boolean
+      essential_drill_topic:
+        type: boolean
+      facility_code:
+        type: string
+      facility_name:
+        type: string
+      _id:
+        type: integer
+      id_number_cme:
+        type: string
+      id_number_drill:
+        type: string
+      mentor_name:
+        type: string
+      submission_id:
+        type: string
+      success_story:
+        type: string
+
+  ArrayOfMentorships:
+    type: array
+    items:
+      $ref: '#/definitions/Mentorship'
+
+
+
+

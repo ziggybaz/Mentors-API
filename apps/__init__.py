@@ -2,6 +2,7 @@ from flask import Flask
 import os
 from .api import api_v1
 from conf import AppConfig, AppDevConfig, AppHerokuConfig
+from flasgger import Swagger
 from models import MentorCheck
 from models import CMETopic
 from models import DrillTopic
@@ -19,5 +20,6 @@ def init_app(db=None):
     if db:
         db.init_app(app)
 
+    swag = Swagger(app, template_file="./docs/docs.yml")
     app.register_blueprint(api_v1)
     return app
