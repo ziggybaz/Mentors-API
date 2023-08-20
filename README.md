@@ -121,7 +121,7 @@ To run unit tests
 To run all tests with coverage report .
 
 ```shell
-(venv)  make all_tests
+(venv)  make test_coverage
 ```
 
 ### Checking the database on local
