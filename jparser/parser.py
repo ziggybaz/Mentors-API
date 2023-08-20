@@ -63,6 +63,10 @@ class ParseRow:
         return cme_partcipants, drill_partcipants
 
     def match_particpant_and_topics_to_rows(self):
+        """
+        Match each participant to drill topic and cme topic
+        """
+        # TODO :Fix code smell
         participations = []
         processed_data = self.get_flat_data()
         processed_data.update(self.get_facility_details())
@@ -117,7 +121,10 @@ class ParseRows:
     def __init__(self, data_rows) -> None:
         self.data_rows = data_rows
 
-    def compute_cms_and_drill_topics(self):
+    def compute_cme_and_drill_topics(self):
+        """
+        Genrate list of cme and drill topic from sheet and ensure outputs are unique sets
+        """
         cme_topics = ["null"]
         drill_topics = ["null"]
         for row in self.data_rows:

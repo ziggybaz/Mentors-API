@@ -154,7 +154,7 @@ class TestParseRows(unittest.TestCase):
         self.app = ParseRows([row_data])
 
     def test_compute_cms_and_drill_topics(self):
-        cme_topics, drill_topics = self.app.compute_cms_and_drill_topics()
+        cme_topics, drill_topics = self.app.compute_cme_and_drill_topics()
         self.assertSetEqual(
             cme_topics,
             {

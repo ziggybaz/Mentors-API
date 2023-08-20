@@ -1,0 +1,9 @@
+SHELL=/bin/bash
+PATH=/usr/local/bin
+
+
+APP_STATE=docker
+APP_KEY=KdFHo23T8IWI2c-zb9KE6PIrHgDerOc-QyxMAVzqEQk=
+DB_URI=postgresql+psycopg2://postgres:postgres@mentors-db:5432/mentors
+
+*/1 * * * * export FLASK_APP=manage.py &&BASH_ENV=/etc/profile && python /usr/src/app/manage.py read '/usr/src/app/data-source/sample-2.csv' > /proc/1/fd/1 2>/proc/1/fd/2

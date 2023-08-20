@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+
 
 set -eu
 
@@ -28,7 +29,7 @@ echo "Database is up ..."
 
 
 
-export FLASK_APP=manage.py &&  python manage.py create_db && python manage.py read "./data-source/sample-2.csv" && python manage.py run -h 0.0.0.0
+export FLASK_APP=manage.py &&  python manage.py create_db && python manage.py read "./data-source/sample-2.csv" && cron  && python manage.py run -h 0.0.0.0
 
 
 

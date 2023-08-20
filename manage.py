@@ -31,10 +31,11 @@ def read_data(source):
         app.logger.info("Running cron job..")
         input_rows = csv.DictReader(f)
         scanner = ParseRows(input_rows)
-        cme_t, drill_t = scanner.compute_cms_and_drill_topics()
+        cme_t, drill_t = scanner.compute_cme_and_drill_topics()
         cme_drill_topics_db_ids_temp = {}
 
         # Store CME topics
+        # TODO :Fix code smell
         for item in cme_t:
             # TODO :optimize
             sql = text(
@@ -69,6 +70,7 @@ def read_data(source):
             processor = ParseRow(item)
             cleaned_data = processor.match_particpant_and_topics_to_rows()
             for row in cleaned_data:
+                # TODO :Fix code smell
                 row.update(
                     {
                         "cme_unique_id": cme_drill_topics_db_ids_temp[

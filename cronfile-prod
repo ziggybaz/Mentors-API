@@ -1,0 +1,8 @@
+SHELL=/bin/bash
+PATH=/usr/local/bin
+
+
+APP_STATE=heroku
+
+
+*/1 * * * * export FLASK_APP=manage.py &&BASH_ENV=/etc/profile && python /usr/src/app/manage.py read '/usr/src/app/data-source/sample-2.csv'
